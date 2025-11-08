@@ -1,6 +1,8 @@
 require('dotenv').config();
-const startDiscordBot = require('./discordBot');
-const startTwitchBot = require('./twitchBot');
 
-startDiscordBot();
+//Twitch bot handles all commands and ping detection
+const { startTwitchBot } = require('./twitchBot');
+const { startDiscordRelay } = require('./discordRelay');
+
+startDiscordRelay();
 startTwitchBot();

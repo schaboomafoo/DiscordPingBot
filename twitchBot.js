@@ -45,18 +45,12 @@ function startTwitchBot() {
         );
       }
 
-      if (!ping) {
+      if (!ping)
         return client.say(channel, `@${username}, usage: !addping [word/phrase]`);
-      }
 
-
-
-
-
-      if (!ping) return client.say(channel, `@${username}, usage: !addping [word/phrase]`);
-      if (!users[username]) users[username] = { pings: [], channels: [] };
       users[username].pings.push(ping);
       saveUsers();
+    
       return client.say(channel, `@${username}, added ping: "${ping}"`);
     }
 
